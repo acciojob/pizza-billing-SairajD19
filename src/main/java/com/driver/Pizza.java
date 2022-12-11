@@ -12,11 +12,11 @@ public class Pizza {
         // your code goes here
         if(isVeg){
             setPrice(300);
-            setBill("Base Price Of The Pizza = 300\n");
+            setBill("Base Price Of The Pizza: 300\n");
         }
         else {
             setPrice(400);
-            setBill("Base Price Of The Pizza = 400\n");
+            setBill("Base Price Of The Pizza: 400\n");
         }
     }
 
@@ -35,7 +35,7 @@ public class Pizza {
     public void addExtraCheese(){
         // your code goes here
         setPrice(getPrice()+80);
-        setBill(getBill()+"Extra Cheese Added = 80\n");
+        setBill(getBill()+"Extra Cheese Added: 80\n");
 
     }
 
@@ -43,18 +43,18 @@ public class Pizza {
         // your code goes here
         if(isVeg){
             setPrice(getPrice()+70);
-            setBill(getBill()+"Extra Toppings Added = 70\n");
+            setBill(getBill()+"Extra Toppings Added: 70\n");
         }
         else{
             setPrice(getPrice()+120);
-            setBill(getBill()+"Extra Toppings Added = 120\n");
+            setBill(getBill()+"Extra Toppings Added: 120\n");
         }
     }
 
     public void addTakeaway(){
         // your code goes here
         setPrice(getPrice()+20);
-        setBill(getBill()+"Paperbag Added = 20\n");
+        setBill(getBill()+"Paperbag Added: 20\n");
 
     }
 
@@ -65,6 +65,6 @@ public class Pizza {
     }
 
     public String getTotalBill() {
-        return getBill()+"Total Price = "+getPrice()+"\n";
+        return getBill()+"Total Price: "+getPrice()+"\n";
     }
 }
