@@ -5,66 +5,73 @@ public class Pizza {
     private int price;
     private Boolean isVeg;
     private String bill;
-    //private String  totalBill;
+    private String adder;
+
+    public String getAdder() {
+        return adder;
+    }
+
+    public void setAdder(String adder) {
+        this.adder = adder;
+    }
 
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
         // your code goes here
         if(isVeg){
             setPrice(300);
-            setBill("Base Price Of The Pizza: 300\n");
+            setAdder("Base Price Of The Pizza: 300\n");
         }
-        else {
+        else{
             setPrice(400);
-            setBill("Base Price Of The Pizza: 400\n");
+            setAdder("Base Price Of The Pizza: 400\n");
         }
     }
 
-    public void setBill(String bill) {
-        this.bill = bill;
-    }
 
     public void setPrice(int price) {
+
         this.price = price;
     }
 
     public int getPrice(){
+
         return this.price;
     }
 
     public void addExtraCheese(){
         // your code goes here
         setPrice(getPrice()+80);
-        setBill(getBill()+"Extra Cheese Added: 80\n");
-
+        setAdder(getAdder()+"Extra Cheese Added: 80\n");
     }
 
     public void addExtraToppings(){
         // your code goes here
         if(isVeg){
             setPrice(getPrice()+70);
-            setBill(getBill()+"Extra Toppings Added: 70\n");
+            setAdder(getAdder()+"Extra Toppings Added: 70\n");
         }
         else{
             setPrice(getPrice()+120);
-            setBill(getBill()+"Extra Toppings Added: 120\n");
+            setAdder(getAdder()+"Extra Toppings Added: 120\n");
         }
     }
 
     public void addTakeaway(){
         // your code goes here
+        setAdder(getAdder()+"Paperbag Added: 20\n");
         setPrice(getPrice()+20);
-        setBill(getBill()+"Paperbag Added: 20\n");
 
+    }
+
+    public void setBill(String bill) {
+        this.bill = bill;
     }
 
     public String getBill(){
         // your code goes here
+        setBill(getAdder()+"Total Price: "+getPrice()+"\n");
 
         return this.bill;
     }
-
-    /*public String getTotalBill() {
-        return getBill()+"Total Price: "+getPrice()+"\n";
-    }*/
 }
