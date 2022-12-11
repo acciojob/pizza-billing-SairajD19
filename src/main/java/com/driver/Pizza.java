@@ -6,6 +6,8 @@ public class Pizza {
     private Boolean isVeg;
     private String bill;
     private String adder;
+    boolean alreadyExecuted = false;
+    boolean isAlreadyExecuted = false;
 
     public String getAdder() {
         return adder;
@@ -41,19 +43,24 @@ public class Pizza {
 
     public void addExtraCheese(){
         // your code goes here
-        setPrice(getPrice()+80);
-        setAdder(getAdder()+"Extra Cheese Added: 80\n");
+        if(!isAlreadyExecuted) {
+            setPrice(getPrice() + 80);
+            setAdder(getAdder() + "Extra Cheese Added: 80\n");
+            isAlreadyExecuted = true;
+        }
     }
 
     public void addExtraToppings(){
         // your code goes here
-        if(isVeg){
-            setPrice(getPrice()+70);
-            setAdder(getAdder()+"Extra Toppings Added: 70\n");
-        }
-        else{
-            setPrice(getPrice()+120);
-            setAdder(getAdder()+"Extra Toppings Added: 120\n");
+        if(!alreadyExecuted) {
+            alreadyExecuted = true;
+            if (isVeg) {
+                setPrice(getPrice() + 70);
+                setAdder(getAdder() + "Extra Toppings Added: 70\n");
+            } else {
+                setPrice(getPrice() + 120);
+                setAdder(getAdder() + "Extra Toppings Added: 120\n");
+            }
         }
     }
 
