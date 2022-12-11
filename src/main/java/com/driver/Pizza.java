@@ -5,7 +5,7 @@ public class Pizza {
     private int price;
     private Boolean isVeg;
     private String bill;
-    private String  totalBill;
+    //private String  totalBill;
 
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
@@ -64,7 +64,7 @@ public class Pizza {
         return this.bill;
     }
 
-    public String getTotalBill() {
+    /*public String getTotalBill() {
         return getBill()+"Total Price: "+getPrice()+"\n";
-    }
+    }*/
 }
